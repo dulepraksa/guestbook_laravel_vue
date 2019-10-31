@@ -1,0 +1,239 @@
+.profile {
+    @include d-grid;
+    grid-gap: 20px;
+    height: 100%;
+    .loader-center {
+            #loader {
+                position: absolute;
+                z-index: 1;
+                top: 50%;
+                right: 40%;
+                width: 80px;
+                height: 80px;
+                margin: -40px 0 0 -40px;
+                border: 5px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 5px solid #C70D01;
+                width: 60px;
+                height: 60px;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
+            }
+                @-webkit-keyframes spin {
+                    0% { -webkit-transform: rotate(0deg); }
+                    100% { -webkit-transform: rotate(360deg); }
+                }
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+    }
+        .profile-banner {
+            @include d-grid();
+            @include dashboard-item-shadow();
+            grid-template-columns: auto auto auto;
+            grid-gap: 10px;
+            border-radius: 3px;
+            padding: 10px;
+                .profile-banner-header {
+                    height: 100%;
+                    text-align: center;
+                    grid-column: 1 / span 3;
+                    // border-bottom: 1px solid lightgray;
+                        .name-avatar {
+                            div {
+                                img {
+                                    width: 200px;
+                                    height: 200px;
+                                    border-radius: 50%
+                                }
+                            }
+                        }
+                }
+                .banner-item {
+                    text-align: center;
+                    border-right: 1px solid lightgray;
+                    // position: absolute;
+                    &:last-child {
+                        border-right: none;
+                    }
+                    .add-coffees{
+                        position: relative;
+                            i {
+                            }
+                    }
+                }
+        }
+
+        .profile-errors {
+            
+        }
+
+        .profile-info-edit {
+            @include fluid();
+            @include d-grid();
+            @include dashboard-item-shadow();
+            grid-gap: 10px;
+            border-radius: 3px;
+            font-size: 15px;
+            padding: 15px;
+            grid-template-columns: 40% 1fr;
+            div {
+                grid-column: 1 / span 2;
+                border-bottom: 1px solid lightgray;
+            }
+            label {
+                align-items: center;
+                float: left;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+            input {
+                align-items: center;
+                float: right
+            }
+            span {
+                float: right;
+            }
+            select {
+                align-items: center;
+                float:right;
+            }
+        }
+        .admin-actions {
+            
+            @include d-flex();
+            justify-content: flex-end;
+            .button-red {
+                cursor: pointer;
+                padding: 5px;
+                border: none;
+                outline: none;
+                border-radius: 2px;
+                background-color: $primary;
+                color: white;
+            }
+        }
+        .tab-container {
+            @include fluid();
+                .tabs {
+                    overflow: hidden;
+                    margin-bottom: -2px;
+                        a {
+                            float: left;
+                            cursor: pointer;
+                            padding: 12px 24px;
+                            transition: background-color 0.2s;
+                            border: 1px solid #ccc;
+                            border-right: none;
+                            background-color: #f1f1f1;
+                            border-radius: 4px 4px 0 0;
+                            font-weight: bold;
+                                &.active {
+                                    background-color: #fff;
+                                    color: $primary;
+                                    border-bottom: 2px solid #fff;
+                                    cursor: default;
+                                }
+                                &:last-child {
+                                    border-right: 1px solid #ccc;
+                                } 
+                            }
+                    }
+                    .tab-content{
+                        @include dashboard-item-shadow();
+                        border: 1px solid lightgray !important;
+                        padding: 10px;
+                        border-radius: 0 4px 4px 4px;
+                            .guest-visits-table {
+                                @include flex-grow();
+                                @include fluid();
+                                font-size: inherit;
+                                width: 100%;
+                                overflow:hidden;
+                                border-collapse: collapse;
+                                border-radius: 1em;
+                                th{
+                                    padding: 15px;
+                                    text-align: left;
+                                    color: $primary;
+                                    border-bottom: 1px solid lighten($font-color,40);
+                                    border-right: 1px solid lighten($font-color,40);
+                                        &:last-child {
+                                        border-right: none;
+                                        }
+                                }
+                                td {
+                                    padding: 15px;
+                                    text-align: left;
+                                    border-bottom: 1px solid lighten($font-color,40);
+                                    border-right: 1px solid lighten($font-color,40);
+                                }
+                                tfoot {
+                                    .pagination {
+                                        position: static;
+                                        right:0;
+                                        @include d-flex();
+                                        width: 100%;
+                                        padding: 10px;
+                                          .pagination-item {
+                                            @include d-flex();
+                                            @include d-flex-row();
+                                            text-decoration: none;
+                                            padding: 4px;
+                                            font-weight: 600;
+                                            &.active{
+                                              background-color: $primary;
+                                            }
+                                            &:disabled {
+                                              cursor: not-allowed;
+                                            }
+                                                a.active {
+                                                color: white;
+                                                }
+                                            }
+                                    }
+                                }
+                            }
+                            .info-tab {
+                                @include fluid();
+                                @include d-grid();
+                                border-radius: 3px;
+                                font-size: 15px;
+                                padding: 15px;
+                                margin-top: 20px;
+                                grid-template-columns: 40% 1fr;
+                                label {
+                                    align-items: center;
+                                    float: left;
+                                    margin-bottom: 10px;
+                                    padding-right: 20px;
+                                    }
+                                    input {
+                                        align-items: center;
+                                        margin-bottom: 3px;
+                                        margin-top: 3px;
+                                        padding: 2px;
+                                        float: right
+                                    }
+                                    select {
+                                        align-items: center;
+                                        float:right;
+                                    }
+                                }
+                                .contracts-tab {
+                                    @include d-grid();
+                                    grid-gap: 15px;
+                                        .contracts-list {
+                                            @include d-grid();
+                                            grid-gap: 5px; 
+                                                div {
+                                                    button {
+                                                        margin-left: 5px;
+                                                    }
+                                                }
+                                        }
+                                }
+                            }
+                        }
+}

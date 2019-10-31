@@ -1,0 +1,117 @@
+@mixin d-flex {
+    display: flex;
+  }
+  
+  @mixin d-flex-h-center {
+    justify-content: center;
+  }
+  
+  @mixin d-flex-row {
+    flex-direction: row;
+  }
+  
+  @mixin d-flex-between {
+    justify-content: space-between;
+  }
+  
+  @mixin d-flex-v-center {
+    align-items: center;
+  }
+  
+  @mixin d-flex-column {
+    flex-direction: column;
+  }
+  
+  @mixin border-b {
+    border-bottom: 1px solid gray;
+  }
+  
+  @mixin d-flex-space-around() {
+    justify-content: space-around;
+  }
+  @mixin d-flex-even {
+    justify-content: space-evenly;
+  }
+  @mixin d-flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin fluid {
+    width: 100%;
+    height: 100%;
+  }
+  
+  @mixin flex-grow {
+    flex-grow:1;
+  }
+  
+  @mixin drop-shadow {
+  //   -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  // box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.50);
+  }
+
+  @mixin dashboard-item-shadow {
+    box-shadow: 7px 7px 10px 1px rgba(0,0,0,0.42);
+  }
+  
+  @mixin borders {
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    border-left: 1px solid #d7d7d7;
+    border-top: 1px solid #d7d7d7;
+  }
+  
+  @mixin drop-shadow-inset {
+  -webkit-box-shadow: inset 2px 4px 5px 4px rgba(0,0,0,0.35);
+  -moz-box-shadow: inset 2px 4px 5px 4px rgba(0,0,0,0.35);
+  box-shadow: inset 2px 4px 5px 4px rgba(0,0,0,0.35);
+  }
+  
+  @mixin drop-shadow-inset-full {
+    -webkit-box-shadow: inset 0px 6px 5px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: inset 0px 6px 5px 0px rgba(0,0,0,0.35);
+    box-shadow: inset 0px 6px 5px 0px rgba(0,0,0,0.35);
+  }
+  
+  //D-Grid
+  
+  @mixin d-grid {
+    display: grid;
+  }
+  
+  @mixin hover-red {
+    &:hover {
+      color: white;
+      font-weight: 600;
+      background-color: $primary;
+    }
+  }
+  
+  @mixin d-grid-space-around() {
+    justify-content: space-around;
+  }
+  
+  /*
+    Reusable-layouts-mixins
+  */
+  // br
+  @mixin card-layout{
+    border-radius: 1%;
+    padding: 15px;
+    height: 100%;
+    width: 45%;
+    border: 1px solid lightgray;
+    background-color: white;
+    color: $font-color;
+  }
+  
+  @mixin headers {
+    @include d-grid();
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+  }
+  //Placeholders
+  
+  

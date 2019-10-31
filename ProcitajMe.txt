@@ -1,0 +1,2 @@
+Napravi bazu pod imenom 'guestbook', pokreni skriptu koja ce da pokrene:
+composer update, npm install, php artisan migrate, php artisan db:seed, php artisan key:generate
